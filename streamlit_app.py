@@ -1,8 +1,4 @@
-"""Streamlit Community Cloud entrypoint.
-
-Cloud looks for this file at the repository root. Keep it here so deploys
-cannot pick an unrelated pages/*.py from another project.
-"""
+"""Streamlit Community Cloud entrypoint."""
 
 from src.app import main
 

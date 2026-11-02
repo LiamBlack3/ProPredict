@@ -18,7 +18,6 @@ from data_io import (
     load_sample_player,
     load_sample_team,
     numeric_columns,
-    project_root,
     require_columns,
     year_bounds,
 )
@@ -26,12 +25,6 @@ from modeling import MODEL_CHOICES, compare_models, evaluate_and_forecast, yearl
 from viz import add_forecast_marker, ols_summary, scatter_with_trend
 
 ALL_TEAMS = "All Teams"
-HOME_IMAGE = project_root() / "images" / "homepage.png"
-
-
-def _safe_image(path: Path) -> None:
-    if path.exists():
-        st.image(str(path), caption="Explore team and player season stats, then forecast the next season.", use_container_width=True)
 
 
 @st.cache_data(show_spinner=False)
@@ -114,7 +107,6 @@ def home_page() -> None:
             - Caveat: this is a trend baseline, not a multi-factor player projection
             """
         )
-    _safe_image(HOME_IMAGE)
 
 
 def data_summary(team_df: pd.DataFrame | None, player_df: pd.DataFrame | None) -> None:
