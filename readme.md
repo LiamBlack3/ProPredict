@@ -88,7 +88,7 @@ The app opens locally (typically `http://localhost:8501`). Leave **Use bundled N
 - GitHub: [LiamBlack3/ProPredict](https://github.com/LiamBlack3/ProPredict)
 - App: [propredict.streamlit.app](https://propredict.streamlit.app) (Streamlit Community Cloud, entrypoint `src/app.py`)
 
-If the app is not live yet, deploy it from [share.streamlit.io](https://share.streamlit.io/deploy?repository=LiamBlack3/ProPredict&branch=main&mainModule=src/app.py&subdomain=propredict).
+If the app is not live yet, deploy it from [share.streamlit.io](https://share.streamlit.io/deploy?repository=LiamBlack3/ProPredict&branch=master&mainModule=src/app.py&subdomain=propredict).
 
 ```bash
 pytest -q
