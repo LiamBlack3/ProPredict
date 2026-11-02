@@ -44,6 +44,7 @@ Holdout error is the number to trust. Training R² on a short yearly series is e
 
 ```text
 ProPredict/
+├── streamlit_app.py       # Cloud / local entrypoint (use this file)
 ├── data/                  # Sample team and player CSVs
 ├── images/                # README screenshots
 ├── src/
@@ -70,7 +71,7 @@ Windows:
 ```bash
 .venv\Scripts\activate
 pip install -r requirements.txt
-streamlit run src/app.py
+streamlit run streamlit_app.py
 ```
 
 macOS / Linux:
@@ -78,21 +79,35 @@ macOS / Linux:
 ```bash
 source .venv/bin/activate
 pip install -r requirements.txt
-streamlit run src/app.py
+streamlit run streamlit_app.py
 ```
 
 The app opens locally (typically `http://localhost:8501`). Leave **Use bundled NBA sample data** on, or upload CSVs that include `YEAR` and `TEAM` (and `Player` for player files). Always run Streamlit from the repository root so local paths match Streamlit Community Cloud.
 
-## Live demo
-
-- GitHub: [LiamBlack3/ProPredict](https://github.com/LiamBlack3/ProPredict)
-- App: [propredict.streamlit.app](https://propredict.streamlit.app) (Streamlit Community Cloud, entrypoint `src/app.py`)
-
-If the app is not live yet, deploy it from [share.streamlit.io](https://share.streamlit.io/deploy?repository=LiamBlack3/ProPredict&branch=master&mainModule=src/app.py&subdomain=propredict).
-
 ```bash
 pytest -q
 ```
+
+## Live demo
+
+- Code: [github.com/LiamBlack3/ProPredict](https://github.com/LiamBlack3/ProPredict)
+- App: [propredict.streamlit.app](https://propredict.streamlit.app)
+
+## Streamlit Community Cloud
+
+Use **this** repository. Do not point Cloud at another `pro_predict` project or at `pages/1_Prediction.py`.
+
+| Setting | Value |
+| --- | --- |
+| Repository | [`LiamBlack3/ProPredict`](https://github.com/LiamBlack3/ProPredict) |
+| Branch | `master` |
+| Main file | `streamlit_app.py` |
+| Python | 3.11 (`runtime.txt`) |
+| App URL | [propredict.streamlit.app](https://propredict.streamlit.app) |
+
+One-click deploy (sign in with GitHub): [share.streamlit.io/deploy](https://share.streamlit.io/deploy?repository=LiamBlack3/ProPredict&branch=master&mainModule=streamlit_app.py&subdomain=propredict).
+
+If an existing Cloud app is already wired to the wrong repo, delete it or change the three settings above, then reboot.
 
 ## Data
 
